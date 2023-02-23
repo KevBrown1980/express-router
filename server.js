@@ -1,12 +1,13 @@
 const express = require("express")
 const app = express()
 const port = 3000
-const userRouter = require("./routes/user")
-const fruitRouter = require("./routes/fruit")
+const userRouter = require("./routes/users")
+const fruitRouter = require("./routes/fruits")
 
 app.use(express.json())
 app.use(express.urlencoded({extended:true}))
-app.use("/fruit", booksRouter)
+app.use("/fruits", fruitRouter)
+app.use("/users", userRouter)
 
 // List of Users//
 // let users = [
